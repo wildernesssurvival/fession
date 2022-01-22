@@ -1,0 +1,77 @@
+
+	
+	*{
+		
+		list-style: none;/*去掉列表的样式*/
+	}
+	#wrap{
+		width:1100px;
+		height:700px;
+		margin:20px auto;/*atuo会使其居中*/
+		margin-left: 400px;
+		position:relative;
+		/*cursor: pointer;*/
+	}
+	#pic li{
+		display: none;
+		position:absolute;/*绝对定位，相对于上面用相对定位的父元素*/
+		
+		top:0px;
+		left: 0px;
+		z-index: 1;
+	}
+	#num{
+		position:absolute;/*绝对定位，相对于上面用相对定位的父元素#wrap*/
+		z-index: 2;/*比上面#pic li的对应属性的值大，因此这个元素会显示在更上层，覆盖在上一个元素上面*/
+		bottom:100px;
+		left:400px;
+
+	}
+	#num li{
+		float:left;/*向左浮动，使列表水平排列*/
+		width:20px;
+		height:20px;
+		margin:10px;
+		border-radius: 50%;/*border-radius圆角边框，四个角都为半径为原来边长的50%的圆弧，使呈现为小圆点形状*/
+		border:1px solid green;
+		line-height: 20px;
+		background: white;
+		
+	}
+	#num li.active{
+		background: green;
+		/*当前显示的这一项它的颜色会不同于其他项*/
+	}
+	.arrow{
+		z-index: 3;/*箭头覆盖在上面两个列表之上显示*/
+		height:100px;
+		width:60px;
+		position: absolute;/*相对于使用相对定位的id=wrap*/
+		top:40%;
+		line-height: 100px;/*可以使其内容在高度为100px的元素中高度居中*/
+		text-align: center;
+		background:#F4E7E7;
+		display:none;/*初始时不显示*/
+	}
+	#wrap:hover .arrow{
+		display:block;
+		/*当鼠标悬停在轮播图区域上方时，箭头以block格式显示出来*/	
+		
+	}
+	.arrow:hover{
+		background: #555555;
+		/*当鼠标悬停在此元素上方时，背景颜色改变*/
+	}
+	#left{
+		position: absolute;
+		margin-top: -50px;
+		left:0px;
+		
+	}
+	#right{
+		position: absolute;
+		margin-top: -50px;
+		right:0px;
+	}
+
+/*----------------------------------------------------------------------*/
